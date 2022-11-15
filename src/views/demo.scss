@@ -1,0 +1,23 @@
+@import url('./common.scss');
+
+.page {
+  padding: 50px;
+  text-align: left;
+
+  h2, h3, h4 {
+    font-weight: normal;
+  }
+
+  > div{
+    display: flex;
+    .page-right {
+      margin-left: 100px;
+    }
+  }
+}
+
+.red {
+  color: #000;
+}
+
+
