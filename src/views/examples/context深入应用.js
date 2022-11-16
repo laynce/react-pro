@@ -1,5 +1,5 @@
 import React from "react";
-import '../assets/style/demo.scss'
+import './demo.scss'
 
 const commonContext = React.createContext({
     background: 'red'

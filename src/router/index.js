@@ -10,7 +10,7 @@ export default function Router() {
     <React.Suspense fallback={<h2>加载中...</h2>}>
       <BrowserRouter>
         <Routes>
-          <Route path='/standard' element={<Standard />}></Route>
+          <Route path='/' element={<Standard />}></Route>
           <Route path='/error' element={<Error />}></Route>
           <Route path='*' element={<Error />}></Route>
         </Routes>

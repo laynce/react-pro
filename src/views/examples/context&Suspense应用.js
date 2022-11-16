@@ -1,7 +1,7 @@
 import React, {Suspense, createRef} from "react";
 import './demo.scss'
 
-const Child = React.lazy(() => import('./child'))
+const Child = React.lazy(() => import('./Suspense'))
 const commonContext = React.createContext({
     val: 9
 })

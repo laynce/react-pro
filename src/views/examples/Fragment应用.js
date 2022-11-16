@@ -1,6 +1,6 @@
 import React, {Fragment} from "react";
 import './demo.scss'
-
+// Fragment 和<》></> 相当于vue的template标签
 export default class myCom extends React.Component {
   constructor(props) {
     super(props)
