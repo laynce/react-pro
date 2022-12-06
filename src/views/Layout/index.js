@@ -1,15 +1,13 @@
-import React from "react";
+import React, {} from "react";
 import '../../assets/style/demo.scss'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 
 // Outlet 渲染子路由元素
-export default class Layout extends React.Component {
-  constructor(props) {
-    super(props)
-    this.setMenu()
-  }
+export default function Layout() { 
+  let menu = []
+  const navigate = useNavigate()
 
-  setMenu() {
+  const setMenu = () => {
     const menuLists = [{
       name: '标准管理',
       url: 'standard'
@@ -23,29 +21,31 @@ export default class Layout extends React.Component {
       url: 'dataOrigin'
     }]
     
-    this.menu = menuLists.map((m, index) => (
-      <h4 url={ m.url} className='mt-10' key={index}>{ m.name}</h4>
+    menu = menuLists.map((m, index) => (
+      <h4 url={ m.url} className='mt-10 pointer' key={index} onClick={go}>{ m.name}</h4>
     ))
   }
 
-
-  componentDidMount() {}
-  
-  render() {
-    return (
-      <div className="page">
-        <h3>菜单</h3>
-        <div>
-          <div>
-            {
-              this.menu
-            }
-          </div>
-          <div className="page-right">
-            <Outlet />
-          </div>
-        </div>
-    </div>
-    )
+  const go = (e) => {
+    const url = e.target.getAttribute('url')
+    navigate(`/page/${url}`)
   }
+
+  setMenu()
+  
+  return (
+    <div className="page">
+      <h3>菜单</h3>
+      <div>
+        <div>
+          {
+            menu
+          }
+        </div>
+        <div className="page-right">
+          <Outlet />
+        </div>
+      </div>
+    </div>
+  )
 }

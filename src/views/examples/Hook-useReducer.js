@@ -1,6 +1,6 @@
 import React, { useReducer, useState } from 'react';
 import '../assets/style/demo.scss'
-import { reducer, initState } from './reduce/reduce'
+import { reducer, initState } from '../reduce/reduce'
 
 export default function Demo(props) {
   const [flag, setFlag] = useState(true)
