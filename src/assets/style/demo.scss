@@ -1,16 +1,8 @@
 .page {
-  padding: 50px;
   text-align: left;
 
   h2, h3, h4 {
     font-weight: normal;
-  }
-
-  > div{
-    display: flex;
-    .page-right {
-      margin-left: 100px;
-    }
   }
 }
 
@@ -18,4 +10,15 @@
   color: #000;
 }
 
+.login-form {
+  width: 500px;
+  margin: 200px auto 0;
+  padding-top: 20px;
+  text-align: left;
+  border: none;
+}
+
+html {
+  line-height: 30px;
+}
 

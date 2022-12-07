@@ -5,6 +5,7 @@ export const initState = {
 
 
 export const reducer = function (state, action) {
+
   // state: 上一次的state
   switch (action.type) {
     case 'increase':

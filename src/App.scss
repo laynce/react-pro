@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+  height: 100vh;
+  float: left;
+  width: 100%;
+  &::after{
+    content: '';
+    display: block;
+  }
+}

@@ -7,6 +7,14 @@
     .mt-#{$n} {
       margin-top: $n * 1px;
     }
+
+    .ml-#{$n} {
+      margin-left: $n * 1px;
+    }
+
+    .mr-#{$n} {
+      margin-right: $n * 1px;
+    }
   }
 
   
