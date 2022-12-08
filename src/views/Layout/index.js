@@ -5,7 +5,7 @@ import { Link, Outlet, useNavigate } from 'react-router-dom'
 // Outlet 渲染子路由元素
 
 
-import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
+import { LaptopOutlined, NotificationOutlined, UserOutlined, PieChartFilled, WindowsOutlined } from '@ant-design/icons';
 import { Breadcrumb, Layout, Menu } from 'antd';
 const { Header, Content, Sider } = Layout;
 const navItems = ['1', '2', '3'].map((key) => ({
@@ -14,14 +14,24 @@ const navItems = ['1', '2', '3'].map((key) => ({
 }));
 
 const menItems = [{
-  url: 'introduce',
+  url: '',
   label: '概要',
   icon: LaptopOutlined
 },
 {
-  url: 'product',
+  url: 'product/3?aa=10', // get传参
   label: '认识Hook',
   icon: NotificationOutlined
+  },
+  {
+    url: 'routedesc', // get传参
+    label: '路由介绍',
+    icon: PieChartFilled
+  },
+  {
+    url: 'reduxdesc', // get传参
+    label: 'redux应用',
+    icon: WindowsOutlined
   },
   {
     url: 'test',

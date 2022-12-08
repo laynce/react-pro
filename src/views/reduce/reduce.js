@@ -1,6 +1,6 @@
 export const initState = {
   age: 12, 
-  year: '2022'
+  year: 2022
 }
 
 

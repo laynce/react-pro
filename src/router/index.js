@@ -6,6 +6,8 @@ import Layout from '../views/Layout'
 const Introduce = React.lazy(() => import('../views/introduce'))
 const Test = React.lazy(() => import('../views/demo'))
 const Product = React.lazy(() => import('../views/test'))
+const Routedesc = React.lazy(() => import('../views/routedesc'))
+const Reduxdesc = React.lazy(() => import('../views/reduxdesc'))
 const Error = React.lazy(() => import('../views/error'))
 
 export  default createBrowserRouter([
@@ -18,13 +20,21 @@ export  default createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "introduce",
+        // path: "introduce",
         element: <Introduce />,
-        index: true
+        index: true, // 带有index: true的可以和父路由共享url
       },
       {
-        path: "product",
+        path: "product/:id",
         element: <Product />,
+      },
+      {
+        path: "routedesc",
+        element: <Routedesc />,
+      },
+      {
+        path: "reduxdesc",
+        element: <Reduxdesc />,
       },
       {
         path: "test",
