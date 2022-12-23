@@ -7,7 +7,9 @@ const Introduce = React.lazy(() => import('../views/introduce'))
 const Test = React.lazy(() => import('../views/demo'))
 const Product = React.lazy(() => import('../views/test'))
 const Routedesc = React.lazy(() => import('../views/routedesc'))
-const Reduxdesc = React.lazy(() => import('../views/reduxdesc'))
+const Reduxdesc = React.lazy(() => import('../reduxdesc'))
+const ContentLeft = React.lazy(() => import('../reduxdesc/contentLeft'))
+const ContentRight = React.lazy(() => import('../reduxdesc/contentRight'))
 const Error = React.lazy(() => import('../views/error'))
 
 export  default createBrowserRouter([
@@ -35,6 +37,16 @@ export  default createBrowserRouter([
       {
         path: "reduxdesc",
         element: <Reduxdesc />,
+        children: [
+          {
+            index: true,
+            element: <ContentLeft />
+          },
+          {
+            path: 'content',
+            element: <ContentRight/>
+          }
+        ]
       },
       {
         path: "test",
