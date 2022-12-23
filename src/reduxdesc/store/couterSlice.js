@@ -20,7 +20,11 @@ export const counterSlice = createSlice({
   name: 'counter',
   initialState: {
     count: 10,
-    asyncValue: 100
+    asyncValue: 100,
+    detail: {
+      age: 8,
+      name: '小明'
+    }
   },
   reducers: { // 会生成对应的action
     // increment: (state) => {
@@ -33,6 +37,10 @@ export const counterSlice = createSlice({
     incrementByAmount: (state, action) => {
       state.count += action.payload
     },
+    changeDetail: (state) =>{
+      state.detail.age += 1
+      state.detail.name += 1
+    }
   },
   extraReducers: { // 可以处理上面的额外的action, 这里面的不会在counterSlice.actions里面生成对应的action
     //第二种方式对于异步action可以监听asyIncrease的状态，状态有三种，rejected， fulfilled, pending
@@ -47,7 +55,7 @@ export const counterSlice = createSlice({
 })
 
 // 导出同步的action
-export const { decrement, incrementByAmount } = counterSlice.actions
+export const { decrement, incrementByAmount, changeDetail } = counterSlice.actions
 
 // increment() , decrement(), incrementByAmount(), 本质上就是action,action其实就是对象{type: '', payload: ''}这种形式
 
