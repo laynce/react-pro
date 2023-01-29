@@ -64,12 +64,13 @@ function Content() {
   const [state, dispatch] = useReducer(reducer, initialCount, init);
   const [n, setNum] = useState(11)
   const mem = useMemo(() => {
-      console.log(n, 111)
-  }, [n])
-  console.log(mem, 111)
+    console.log(n, 111)
+      return n + 1
+  }, [n]) // useMem返回缓存，相当于vue的计算属性computed， 当n改变时重新执行方法，计算出新的mem的值
+
   return (
     <>
-      Count: {state.count}---{n}
+      Count: {state.count}---{n}---mem--{mem}
       <button
         onClick={() => dispatch({type: 'reset', payload: initialCount})}>
         Reset
